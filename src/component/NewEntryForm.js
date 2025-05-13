@@ -1,36 +1,23 @@
-import React from "react";
-import { Button, Container, Form } from "semantic-ui-react";
+import {Container } from "semantic-ui-react";
 import MainHeader from "./MainHeader";
 import ButtonSaveOrCancel from "./ButtonSaveOrCancel";
+import EntryForm from "./EntryForm";
 
-function NewEntryForm() {
+function NewEntryForm({addTransaction, description, amount, isExpense, setDescription, setAmount, setIsExpense}) {
+
     return (
-        <Container>
+      <Container>
         <MainHeader title="Add Transaction" type="h3"/>
-        <Form unstackable>
-          <Form.Group widths='equal'>
-            <Form.Input 
-              icon='tags'
-              width={12}
-              label='Transaction Name' 
-              placeholder='Transaction Name' />
-            <Form.Input 
-              icon='inr'
-              width={4}
-              label='Amount' 
-              iconPosition='left'
-              placeholder='Amount' />
-          </Form.Group>
-          <Form.Group inline>
-            <label>Type</label>
-            <Form.Radio label='Income' value='income' checked />
-            <Form.Radio label='Expense' value='expense' />
-          </Form.Group>
-  
-          
-          <ButtonSaveOrCancel/>
-        </Form>
-        </Container>
+        <EntryForm 
+        description={description}
+        amount={amount}
+        isExpense={isExpense}
+        setAmount={setAmount}
+        setDescription={setDescription}
+        setIsExpense={setIsExpense}/>
+
+        <ButtonSaveOrCancel addTransaction={addTransaction} />
+      </Container>
     );
 }
 export default NewEntryForm;
