@@ -13,7 +13,7 @@ function TransactionHistoryBody({ id, description, amount, isExpense = false, de
                     {amount}
                     </Grid.Column>
                     <Grid.Column width={3}>
-                    <Icon name='edit' color='red'onClick = {() => editTransaction(id)}/>
+                    <Icon name='edit' color='red' onClick = {() => editTransaction(id)}/>
                     <Icon name='trash' color='red' onClick={() => deleteTransaction(id)}/>
                     </Grid.Column>
                 </Grid.Row>
